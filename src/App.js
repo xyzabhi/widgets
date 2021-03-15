@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import Accordion from "./components/Accordion";
 import Dropdown from "./components/Dropdown";
+import Header from "./components/Header";
 import Search from "./components/Search";
 import Translate from "./components/Translate";
 import Route from "./Route";
@@ -26,23 +27,24 @@ const items = [
       "You use React by creating components.Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of  (The Extremes of Good and Evil) by Cicero.",
   },
 ];
-const showAccordion = () => {
-  if (window.location.pathname === "/") return <Accordion items={items} />;
-};
-const showList = () => {
-  if (window.location.pathname === "/list") return <Search />;
-};
-const showDropDown = () => {
-  if (window.location.pathname === "/dropdown") return <Dropdown />;
-};
-const showTranslate = () => {
-  if (window.location.pathname === "/translate") return <Translate />;
-};
+// const showAccordion = () => {
+//   if (window.location.pathname === "/") return <Accordion items={items} />;
+// };
+// const showList = () => {
+//   if (window.location.pathname === "/list") return <Search />;
+// };
+// // const showDropDown = () => {
+// //   if (window.location.pathname === "/dropdown") return <Dropdown />;
+// // };
+// // const showTranslate = () => {
+// //   if (window.location.pathname === "/translate") return <Translate />;
+// // };
 const App = () => {
   const [selected, setSelected] = useState(options[0]);
   const [showDropdown, setShoeDropdown] = useState(true);
   return (
     <div>
+      <Header />
       <Route path="/">
         <Accordion items={items} />
       </Route>
